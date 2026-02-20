@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxleaf — Women's Fashion</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g:#2d5a3d;--gl:#3d7a52;--sage:#7a9e87;--mint:#c8e6d4;
+  --cream:#f8f5f0;--warm:#fdf9f4;--dark:#1a1a16;--mid:#4a4a3a;
+  --gold:#b8922a;--border:#e8e0d4;--gray:#7a7060
+}
+html{scroll-behavior:smooth}
+body{background:var(--warm);color:var(--dark);font-family:'Inter',sans-serif;overflow-x:hidden}
+/* TOPBAR */
+.topbar{background:var(--g);color:#fff;text-align:center;font-size:12.5px;padding:10px 16px;letter-spacing:.06em;font-weight:500}
+.topbar b{color:var(--mint)}
+/* HEADER */
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
+.navi{max-width:1340px;margin:0 auto;padding:0 48px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:'Libre Baskerville',serif;font-size:28px;font-weight:700;color:var(--g);text-decoration:none;flex-shrink:0}
+.logo em{font-style:italic;color:var(--gold)}
+.navlinks{display:flex;gap:28px;list-style:none}
+.navlinks a{font-size:13.5px;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s;position:relative;padding-bottom:3px}
+.navlinks a::after{content:'';position:absolute;bottom:0;left:0;right:100%;height:1.5px;background:var(--g);transition:right .3s}
+.navlinks a:hover{color:var(--g)}
+.navlinks a:hover::after{right:0}
+.navr{display:flex;align-items:center;gap:12px}
+.srch{display:flex;align-items:center;gap:8px;background:var(--cream);border:1px solid var(--border);border-radius:24px;padding:8px 18px;transition:border-color .2s}
+.srch:focus-within{border-color:var(--g)}
+.srch input{background:none;border:none;outline:none;font-family:'Inter',sans-serif;font-size:13px;color:var(--dark);width:140px}
+.srch input::placeholder{color:#b0a898}
+.navbtn{background:none;border:none;cursor:pointer;color:var(--mid);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;position:relative;font-size:18px}
+.navbtn:hover{background:var(--cream);color:var(--g)}
+.cbadge{position:absolute;top:3px;right:3px;background:var(--g);color:#fff;width:17px;height:17px;border-radius:50%;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;background:linear-gradient(135deg,#f0f7f3 0%,#e8f4ed 40%,var(--warm) 100%);overflow:hidden;position:relative}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:110px 60px 80px 80px;position:relative;z-index:2}
+.heye{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:7px 18px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:28px;width:fit-content;box-shadow:0 2px 12px rgba(45,90,61,.08);animation:up .7s .1s both}
+.htitle{font-family:'Libre Baskerville',serif;font-size:clamp(40px,5vw,70px);line-height:1.06;color:var(--dark);margin-bottom:22px;animation:up .7s .25s both}
+.htitle em{font-style:italic;color:var(--g)}
+.hdesc{font-size:15.5px;line-height:1.78;color:var(--gray);max-width:400px;margin-bottom:38px;animation:up .7s .4s both}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;animation:up .7s .55s both}
+.bfill{background:var(--g);color:#fff;border:none;padding:15px 36px;border-radius:5px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .25s,transform .2s;box-shadow:0 6px 20px rgba(45,90,61,.28)}
+.bfill:hover{background:var(--gl);transform:translateY(-2px)}
+.bline{background:#fff;color:var(--g);border:1.5px solid var(--g);padding:13px 34px;border-radius:5px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .25s}
+.bline:hover{background:var(--mint);transform:translateY(-2px)}
+.hstats{display:flex;gap:32px;margin-top:48px;animation:up .7s .7s both}
+.snum{font-family:'Libre Baskerville',serif;font-size:26px;color:var(--g);line-height:1}
+.slbl{font-size:11px;color:var(--gray);margin-top:3px;letter-spacing:.04em}
+.hero-r{position:relative;display:flex;align-items:center;justify-content:center;padding:60px 50px;overflow:hidden}
+.hblob{width:360px;height:460px;background:linear-gradient(145deg,#b8d9c4,#7ab894,#3d7a52);border-radius:50% 50% 40% 40% / 55% 55% 45% 45%;display:flex;align-items:center;justify-content:center;font-size:110px;box-shadow:0 32px 80px rgba(45,90,61,.22);animation:up .9s .2s both;position:relative}
+.ftag{position:absolute;background:#fff;border-radius:12px;padding:10px 16px;box-shadow:0 6px 24px rgba(0,0,0,.1);font-size:12.5px;font-weight:600;color:var(--dark);display:flex;align-items:center;gap:7px;white-space:nowrap}
+.ftag:nth-child(2){top:90px;right:20px;animation:fl 3s ease-in-out infinite}
+.ftag:nth-child(3){bottom:120px;left:10px;animation:fl 3s 1.5s ease-in-out infinite}
+.fdot{width:7px;height:7px;border-radius:50%;background:var(--g)}
+/* WRAP */
+.wrap{max-width:1340px;margin:0 auto;padding:72px 48px}
+.slbl2{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
+.stitle{font-family:'Libre Baskerville',serif;font-size:clamp(26px,3.5vw,44px);line-height:1.15;color:var(--dark)}
+.stitle em{font-style:italic;color:var(--gray)}
+.srow{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:16px}
+.amore{font-size:13px;font-weight:600;color:var(--g);text-decoration:none;border-bottom:1px solid var(--g);padding-bottom:2px;white-space:nowrap;transition:opacity .2s}
+.amore:hover{opacity:.7}
+/* CATS */
+.cats{display:flex;gap:12px;flex-wrap:wrap}
+.catc{display:flex;flex-direction:column;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px 22px;cursor:pointer;transition:all .25s;min-width:100px}
+.catc:hover,.catc.on{border-color:var(--g);background:#f0f7f3;transform:translateY(-3px);box-shadow:0 6px 20px rgba(45,90,61,.12)}
+.cico{font-size:28px}
+.cnm{font-size:12.5px;font-weight:600;color:var(--mid)}
+.cct{font-size:10.5px;color:var(--gray)}
+/* PRODUCTS */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pcard{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border);cursor:pointer;transition:transform .3s,box-shadow .3s;position:relative}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(45,90,61,.13)}
+.pimg{width:100%;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:70px;position:relative;overflow:hidden;transition:transform .5s}
+.pcard:hover .pimg{transform:scale(1.03)}
+.g1{background:linear-gradient(145deg,#d4edd9,#b0d9b8)}
+.g2{background:linear-gradient(145deg,#e0f0e8,#c0dcc8)}
+.g3{background:linear-gradient(145deg,#f5ede0,#e8d4b8)}
+.g4{background:linear-gradient(145deg,#e8e0f0,#d0c0e8)}
+.g5{background:linear-gradient(145deg,#f0e8e8,#e0c8c8)}
+.g6{background:linear-gradient(145deg,#e0ece0,#c8dcc8)}
+.g7{background:linear-gradient(145deg,#f0ecd8,#ddd8b8)}
+.g8{background:linear-gradient(145deg,#e8f0e8,#c8d8c8)}
+.pbadge{position:absolute;top:12px;left:12px;padding:4px 11px;border-radius:20px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.bnew{background:var(--g);color:#fff}
+.bsale{background:var(--gold);color:#fff}
+.bhot{background:#c04a20;color:#fff}
+.btrend{background:#5a3a8a;color:#fff}
+.pwish{position:absolute;top:10px;right:10px;background:#fff;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.1);transition:all .2s;opacity:0}
+.pcard:hover .pwish{opacity:1}
+.pwish:hover{background:#f0f7f3;transform:scale(1.1)}
+.pwish.liked{opacity:1;color:var(--g)}
+.pquick{position:absolute;bottom:0;left:0;right:0;background:var(--g);color:#fff;border:none;padding:11px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transform:translateY(100%);transition:transform .3s,background .2s}
+.pcard:hover .pquick{transform:translateY(0)}
+.pquick:hover{background:var(--gl)}
+.pbody{padding:13px 15px 17px}
+.pbrand{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--g);margin-bottom:3px}
+.pname{font-family:'Libre Baskerville',serif;font-size:15.5px;color:var(--dark);margin-bottom:7px;line-height:1.3}
+.psizes{display:flex;gap:4px;margin-bottom:7px;flex-wrap:wrap}
+.sz{font-size:10px;font-weight:600;border:1px solid var(--border);border-radius:4px;padding:2px 6px;color:var(--gray)}
+.pcolors{display:flex;gap:5px;margin-bottom:10px}
+.cdot{width:13px;height:13px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);cursor:pointer;transition:transform .2s}
+.cdot:hover{transform:scale(1.3)}
+.pfoot{display:flex;align-items:center;justify-content:space-between}
+.pprice{display:flex;align-items:baseline;gap:6px}
+.pnow{font-size:17px;font-weight:700;color:var(--g)}
+.pold{font-size:12px;color:#b0a090;text-decoration:line-through}
+.pstar{font-size:11.5px;color:var(--gray)}
+.pstar b{color:var(--gold)}
+.addb{background:#f0f7f3;border:1.5px solid var(--g);color:var(--g);width:32px;height:32px;border-radius:50%;font-size:20px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.addb:hover{background:var(--g);color:#fff;transform:scale(1.08)}
+/* BANNER */
+.banner{background:linear-gradient(120deg,var(--g) 0%,#1e4028 50%,#0f2016 100%);padding:70px 80px;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;position:relative;overflow:hidden}
+.banner::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,.04);top:-180px;right:280px}
+.blbl{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);margin-bottom:14px}
+.btitle{font-family:'Libre Baskerville',serif;font-size:clamp(30px,4vw,52px);color:#fff;line-height:1.1;margin-bottom:14px}
+.btitle em{font-style:italic;color:#b8e6c8}
+.bdesc{color:rgba(255,255,255,.72);font-size:14.5px;line-height:1.75;margin-bottom:28px;max-width:420px}
+.cdrow{display:flex;gap:14px;margin-bottom:30px}
+.cdbox{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:13px 17px;text-align:center;min-width:62px}
+.cdnum{font-family:'Libre Baskerville',serif;font-size:28px;color:#fff;line-height:1}
+.cdlbl{font-size:10px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+.bwbtn{background:#fff;color:var(--g);border:none;padding:14px 36px;border-radius:5px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .25s}
+.bwbtn:hover{background:var(--mint);transform:translateY(-2px)}
+.bright{display:flex;align-items:center;justify-content:center}
+.disc{width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.dnum{font-family:'Libre Baskerville',serif;font-size:72px;color:#fff;line-height:1}
+.doff{font-size:20px;font-weight:700;color:var(--mint);letter-spacing:.1em}
+/* FOUNDERS */
+.fwrap{background:#fff}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.fcard{background:var(--cream);border-radius:18px;overflow:hidden;border:1px solid var(--border);display:grid;grid-template-columns:160px 1fr}
+.fphoto{display:flex;align-items:center;justify-content:center;font-size:64px}
+.fr{background:linear-gradient(145deg,#d4e8e0,#a8c8b8)}
+.fp{background:linear-gradient(145deg,#e8d4d4,#c8a8a8)}
+.finfo{padding:26px 24px 26px 16px;display:flex;flex-direction:column;justify-content:center}
+.frole{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:5px}
+.fname{font-family:'Libre Baskerville',serif;font-size:23px;color:var(--dark);margin-bottom:9px;line-height:1.2}
+.fbio{font-size:13.5px;line-height:1.7;color:var(--gray);margin-bottom:12px}
+.fquote{font-size:13px;font-style:italic;color:var(--g);border-left:3px solid var(--g);padding-left:11px;line-height:1.6}
+/* STORY */
+.sbar{background:var(--dark);padding:56px 80px;text-align:center}
+.sbar blockquote{font-family:'Libre Baskerville',serif;font-size:clamp(18px,2.4vw,30px);font-style:italic;color:rgba(255,255,255,.82);max-width:760px;margin:0 auto 16px;line-height:1.5}
+.sbar cite{font-family:'Inter',sans-serif;font-style:normal;font-size:12.5px;color:var(--sage);font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+/* REVIEWS */
+.rwrap{background:var(--cream)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rcard{background:#fff;border-radius:14px;padding:26px 24px;border:1px solid var(--border)}
+.rstars{color:var(--gold);font-size:14px;margin-bottom:10px;letter-spacing:1px}
+.rtext{font-size:13.5px;line-height:1.72;color:var(--mid);margin-bottom:18px;font-style:italic}
+.ruser{display:flex;align-items:center;gap:11px}
+.rav{width:40px;height:40px;border-radius:50%;color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.av1{background:linear-gradient(135deg,#5a9a6e,#3d7a52)}
+.av2{background:linear-gradient(135deg,#6388e8,#3a5ac2)}
+.av3{background:linear-gradient(135deg,#a06888,#805060)}
+.rname{font-weight:700;font-size:13.5px;color:var(--dark)}
+.rcity{font-size:11.5px;color:var(--gray)}
+/* PERKS */
+.perks{background:var(--dark);display:grid;grid-template-columns:repeat(4,1fr)}
+.perk{padding:30px 34px;border-right:1px solid rgba(255,255,255,.06);display:flex;gap:14px;align-items:center}
+.perk:last-child{border:none}
+.pico{font-size:26px;flex-shrink:0}
+.ptitle{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.psub{font-size:11.5px;color:rgba(255,255,255,.42)}
+/* NL */
+.nlsec{background:#fff;padding:68px 48px;text-align:center}
+.nldesc{font-size:15px;color:var(--gray);margin-bottom:28px;margin-top:8px}
+.nlform{display:inline-flex;max-width:460px;width:100%;background:var(--cream);border:1.5px solid var(--border);border-radius:7px;overflow:hidden;transition:border-color .2s}
+.nlform:focus-within{border-color:var(--g)}
+.nlform input{flex:1;background:none;border:none;outline:none;padding:12px 18px;font-family:'Inter',sans-serif;font-size:14px;color:var(--dark)}
+.nlform input::placeholder{color:#b0a898}
+.nlform button{background:var(--g);color:#fff;border:none;padding:12px 24px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
+.nlform button:hover{background:var(--gl)}
+.nlperks{display:flex;justify-content:center;gap:24px;margin-top:16px;flex-wrap:wrap}
+.nlp{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:5px}
+.nlp::before{content:'✓';color:var(--g);font-weight:700}
+/* FOOTER */
+footer{background:#111410;padding:60px 80px 32px;color:rgba(255,255,255,.55)}
+.ftgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:44px}
+.ftlogo{font-family:'Libre Baskerville',serif;font-size:24px;color:var(--sage);display:block;margin-bottom:12px}
+.ftlogo em{font-style:italic;color:var(--gold)}
+.ftabout{font-size:13px;line-height:1.75;margin-bottom:14px}
+.ftfounders{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:18px;line-height:1.7}
+.ftfounders b{color:rgba(255,255,255,.65)}
+.ftsocials{display:flex;gap:9px}
+.ftsoc{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.07);border:none;cursor:pointer;color:rgba(255,255,255,.6);font-size:14px;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.ftsoc:hover{background:var(--g);color:#fff}
+.ftcoltitle{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:16px}
+.ftcol ul{list-style:none}
+.ftcol li{margin-bottom:8px}
+.ftcol a{color:rgba(255,255,255,.4);text-decoration:none;font-size:13px;transition:color .2s}
+.ftcol a:hover{color:rgba(255,255,255,.88)}
+.ftbot{padding-top:26px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:12px}
+.payrow{display:flex;gap:7px}
+.paypill{background:rgba(255,255,255,.08);border-radius:5px;padding:3px 9px;font-size:10.5px;font-weight:700;color:rgba(255,255,255,.55)}
+/* DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:490;opacity:0;pointer-events:none;transition:opacity .35s}
+.overlay.show{opacity:1;pointer-events:all}
+.drawer{position:fixed;top:0;right:0;width:400px;height:100vh;background:#fff;z-index:500;transform:translateX(100%);transition:transform .42s cubic-bezier(.23,1,.32,1);display:flex;flex-direction:column;box-shadow:-6px 0 40px rgba(0,0,0,.12)}
+.drawer.show{transform:translateX(0)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--border)}
+.dtitle{font-family:'Libre Baskerville',serif;font-size:21px;color:var(--dark)}
+.dcls{background:var(--cream);border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:17px;color:var(--g);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.dcls:hover{background:var(--g);color:#fff}
+.ditems{flex:1;overflow-y:auto;padding:18px 26px}
+.ditem{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--border);animation:up .25s both}
+.di-img{width:64px;height:64px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.di-n{font-weight:600;font-size:13px;color:var(--dark);margin-bottom:2px}
+.di-p{color:var(--g);font-weight:700;font-size:13.5px}
+.di-q{display:flex;align-items:center;gap:7px;margin-top:5px}
+.qb{width:22px;height:22px;border-radius:50%;background:var(--cream);border:none;cursor:pointer;font-size:14px;font-weight:700;color:var(--g);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.qb:hover{background:var(--g);color:#fff}
+.qn{font-size:13px;font-weight:700;min-width:16px;text-align:center}
+.drm{background:none;border:none;cursor:pointer;color:#c0b8b0;font-size:16px;transition:color .2s}
+.drm:hover{color:var(--g)}
+.dempty{text-align:center;padding:56px 20px;color:var(--gray)}
+.dempty div{font-size:48px;margin-bottom:12px}
+.dfoot{padding:18px 26px;border-top:1px solid var(--border)}
+.dtot{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.dtlbl{font-size:13px;font-weight:600;color:var(--gray)}
+.dtval{font-family:'Libre Baskerville',serif;font-size:24px;color:var(--g)}
+.ckbtn{width:100%;background:var(--g);color:#fff;border:none;padding:15px;border-radius:7px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 6px 20px rgba(45,90,61,.28);margin-bottom:8px}
+.ckbtn:hover{background:var(--gl);transform:translateY(-1px)}
+.ctbtn{width:100%;text-align:center;background:none;border:none;color:var(--gray);font-size:13px;cursor:pointer;padding:6px;transition:color .2s}
+.ctbtn:hover{color:var(--g)}
+/* TOAST */
+.toast{position:fixed;bottom:26px;right:26px;background:var(--dark);color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:9px;z-index:1000;transform:translateY(70px);opacity:0;transition:all .38s cubic-bezier(.23,1,.32,1);box-shadow:0 8px 28px rgba(0,0,0,.18);max-width:280px;border-left:3px solid var(--g)}
+.toast.show{transform:translateY(0);opacity:1}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(max-width:1100px){
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+  .hero-r{display:none}
+  .hero-l{padding:100px 36px 60px}
+  .navlinks{display:none}
+  .ftgrid{grid-template-columns:1fr 1fr;gap:28px}
+  .perks{grid-template-columns:1fr 1fr}
+  .banner{grid-template-columns:1fr;padding:52px 36px}
+  .bright{display:none}
+  .fgrid{grid-template-columns:1fr}
+  .rgrid{grid-template-columns:1fr}
+  .drawer{width:100%}
+  footer{padding:52px 28px 28px}
+  .sbar{padding:44px 32px}
+  .wrap{padding:56px 28px}
+  .navi{padding:0 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Sale up to 70% off &nbsp;·&nbsp; <b>Free Shipping</b> above ₹999 &nbsp;·&nbsp; COD Available</div>
+
+<header>
+  <div class="navi">
+    <a class="logo" href="#">Lux<em>leaf</em></a>
+    <ul class="navlinks">
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Kurtas</a></li>
+      <li><a href="#">Dresses</a></li>
+      <li><a href="#">Sets & Coords</a></li>
+      <li><a href="#">Sale</a></li>
+      <li><a href="#founders">Our Story</a></li>
+    </ul>
+    <div class="navr">
+      <div class="srch">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search styles…">
+      </div>
+      <button class="navbtn">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+      <button class="navbtn" onclick="toggleCart()">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cbadge" id="cbadge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<div class="drawer" id="drawer">
+  <div class="dh"><div class="dtitle">Your Cart</div><button class="dcls" onclick="toggleCart()">✕</button></div>
+  <div class="ditems" id="ditems"><div class="dempty"><div>🛍️</div><p>Your cart is empty.<br>Add something beautiful!</p></div></div>
+  <div class="dfoot" id="dfoot" style="display:none">
+    <div class="dtot"><span class="dtlbl">Order Total</span><span class="dtval" id="dtval">₹0</span></div>
+    <button class="ckbtn" onclick="doCheckout()">Checkout Securely →</button>
+    <button class="ctbtn" onclick="toggleCart()">Continue Shopping</button>
+  </div>
+</div>
+<div class="toast" id="toast"><span id="tmsg">Done</span></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="heye"><span style="width:6px;height:6px;border-radius:50%;background:var(--g);display:inline-block"></span> New Collection — 2025</div>
+    <h1 class="htitle">Wear What<br>Makes You<br><em>Feel You</em></h1>
+    <p class="hdesc">Premium ethnic wear and contemporary styles, thoughtfully curated for the modern Indian woman. Real quality, honest prices.</p>
+    <div class="hbtns">
+      <button class="bfill" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+      <button class="bline" onclick="document.getElementById('founders').scrollIntoView({behavior:'smooth'})">Our Story</button>
+    </div>
+    <div class="hstats">
+      <div><div class="snum">15K+</div><div class="slbl">Happy Customers</div></div>
+      <div><div class="snum">400+</div><div class="slbl">Curated Styles</div></div>
+      <div><div class="snum">48h</div><div class="slbl">Fast Delivery</div></div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hblob">👗</div>
+    <div class="ftag"><div class="fdot"></div>Trending Now</div>
+    <div class="ftag"><div class="fdot"></div>Free Delivery</div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<div class="wrap">
+  <div class="srow"><div><span class="slbl2">Browse</span><h2 class="stitle">Shop by <em>Category</em></h2></div></div>
+  <div class="cats">
+    <div class="catc on"><span class="cico">👗</span><span class="cnm">Dresses</span><span class="cct">142 items</span></div>
+    <div class="catc"><span class="cico">🥻</span><span class="cnm">Kurtas</span><span class="cct">98 items</span></div>
+    <div class="catc"><span class="cico">👚</span><span class="cnm">Tops</span><span class="cct">210 items</span></div>
+    <div class="catc"><span class="cico">👖</span><span class="cnm">Bottoms</span><span class="cct">87 items</span></div>
+    <div class="catc"><span class="cico">🧥</span><span class="cnm">Jackets</span><span class="cct">56 items</span></div>
+    <div class="catc"><span class="cico">👒</span><span class="cnm">Accessories</span><span class="cct">175 items</span></div>
+    <div class="catc"><span class="cico">🩱</span><span class="cnm">Jumpsuits</span><span class="cct">44 items</span></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="wrap" id="shop" style="padding-top:0">
+  <div class="srow">
+    <div><span class="slbl2">Featured</span><h2 class="stitle">New <em>Arrivals</em></h2></div>
+    <a href="#" class="amore">View all →</a>
+  </div>
+  <div class="pgrid">
+    <div class="pcard"><div class="pimg g1">👗<span class="pbadge bnew">New</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Floral Wrap Dress','₹1,299','👗','g1')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Floral Wrap Dress</div><div class="pcolors"><div class="cdot" style="background:#f4a7b9"></div><div class="cdot" style="background:#a7c4f4"></div><div class="cdot" style="background:#f4dfc5"></div></div><div class="psizes"><span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹1,299</span><span class="pold">₹2,199</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.8</b> (120)</div><button class="addb" onclick="addToCart('Floral Wrap Dress','₹1,299','👗','g1')">+</button></div></div></div></div>
+    <div class="pcard"><div class="pimg g2">🥻<span class="pbadge bhot">Hot</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Embroidered Kurta Set','₹1,899','🥻','g2')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Embroidered Kurta Set</div><div class="pcolors"><div class="cdot" style="background:#a7c4f4"></div><div class="cdot" style="background:#c5e8d5"></div><div class="cdot" style="background:#e8c5c5"></div></div><div class="psizes"><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span><span class="sz">XXL</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹1,899</span><span class="pold">₹3,500</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.9</b> (85)</div><button class="addb" onclick="addToCart('Embroidered Kurta Set','₹1,899','🥻','g2')">+</button></div></div></div></div>
+    <div class="pcard"><div class="pimg g3">👔<span class="pbadge bsale">Sale</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Linen Co-ord Set','₹999','👔','g3')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Linen Co-ord Set</div><div class="pcolors"><div class="cdot" style="background:#d5e8c5"></div><div class="cdot" style="background:#e8dfc5"></div><div class="cdot" style="background:#e8c5e8"></div></div><div class="psizes"><span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹999</span><span class="pold">₹1,799</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.6</b> (210)</div><button class="addb" onclick="addToCart('Linen Co-ord Set','₹999','👔','g3')">+</button></div></div></div></div>
+    <div class="pcard"><div class="pimg g4">🧥<span class="pbadge btrend">Trending</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Printed Maxi Dress','₹1,599','🧥','g4')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Printed Maxi Dress</div><div class="pcolors"><div class="cdot" style="background:#e8dfc5"></div><div class="cdot" style="background:#f4a7b9"></div><div class="cdot" style="background:#a7f4c4"></div></div><div class="psizes"><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹1,599</span><span class="pold">₹2,800</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.7</b> (67)</div><button class="addb" onclick="addToCart('Printed Maxi Dress','₹1,599','🧥','g4')">+</button></div></div></div></div>
+    <div class="pcard"><div class="pimg g5">👘<span class="pbadge bnew">New</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Silk Kaftan Top','₹849','👘','g5')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Silk Kaftan Top</div><div class="pcolors"><div class="cdot" style="background:#e8c5e8"></div><div class="cdot" style="background:#c5c5e8"></div></div><div class="psizes"><span class="sz">Free Size</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹849</span><span class="pold">₹1,499</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.5</b> (143)</div><button class="addb" onclick="addToCart('Silk Kaftan Top','₹849','👘','g5')">+</button></div></div></div></div>
+    <div class="pcard"><div class="pimg g6">🩱<span class="pbadge bsale">70% Off</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Summer Jumpsuit','₹699','🩱','g6')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Summer Jumpsuit</div><div class="pcolors"><div class="cdot" style="background:#c5e8d5"></div><div class="cdot" style="background:#f4dfc5"></div><div class="cdot" style="background:#e8c5c5"></div></div><div class="psizes"><span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹699</span><span class="pold">₹2,299</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.4</b> (302)</div><button class="addb" onclick="addToCart('Summer Jumpsuit','₹699','🩱','g6')">+</button></div></div></div></div>
+    <div class="pcard"><div class="pimg g7">🧣<span class="pbadge bhot">Hot</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Bandhani Dupatta Set','₹2,199','🧣','g7')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Bandhani Dupatta Set</div><div class="pcolors"><div class="cdot" style="background:#fdf4c5"></div><div class="cdot" style="background:#f4a7b9"></div><div class="cdot" style="background:#c5e8d5"></div></div><div class="psizes"><span class="sz">S-M</span><span class="sz">L-XL</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹2,199</span><span class="pold">₹3,999</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.9</b> (58)</div><button class="addb" onclick="addToCart('Bandhani Dupatta Set','₹2,199','🧣','g7')">+</button></div></div></div></div>
+    <div class="pcard"><div class="pimg g8">👗<span class="pbadge btrend">Trending</span><button class="pwish" onclick="event.stopPropagation()">♡</button><button class="pquick" onclick="addToCart('Palazzo Pants Set','₹1,149','👗','g8')">+ Add to Cart</button></div><div class="pbody"><div class="pbrand">Luxleaf</div><div class="pname">Palazzo Pants Set</div><div class="pcolors"><div class="cdot" style="background:#e8c5c5"></div><div class="cdot" style="background:#c5c5e8"></div><div class="cdot" style="background:#e8dfc5"></div></div><div class="psizes"><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span><span class="sz">XXL</span></div><div class="pfoot"><div class="pprice"><span class="pnow">₹1,149</span><span class="pold">₹1,999</span></div><div style="display:flex;align-items:center;gap:7px"><div class="pstar"><b>4.7</b> (176)</div><button class="addb" onclick="addToCart('Palazzo Pants Set','₹1,149','👗','g8')">+</button></div></div></div></div>
+  </div>
+</div>
+
+<!-- SALE BANNER -->
+<div class="banner">
+  <div>
+    <div class="blbl">Limited Time Sale</div>
+    <h2 class="btitle">End of Season<br><em>Mega Clearance</em></h2>
+    <p class="bdesc">Hundreds of styles starting from ₹499. Limited stock — grab yours before it's gone!</p>
+    <div class="cdrow">
+      <div class="cdbox"><div class="cdnum" id="cdH">08</div><div class="cdlbl">Hours</div></div>
+      <div class="cdbox"><div class="cdnum" id="cdM">34</div><div class="cdlbl">Mins</div></div>
+      <div class="cdbox"><div class="cdnum" id="cdS">00</div><div class="cdlbl">Secs</div></div>
+    </div>
+    <button class="bwbtn">Shop the Sale →</button>
+  </div>
+  <div class="bright"><div class="disc"><div class="dnum">70</div><div class="doff">% OFF</div></div></div>
+</div>
+
+<!-- FOUNDERS -->
+<div class="wrap fwrap" id="founders">
+  <div class="srow" style="margin-bottom:28px"><div><span class="slbl2">Our Story</span><h2 class="stitle">Meet the <em>Founders</em></h2></div></div>
+  <div class="fgrid">
+    <div class="fcard">
+      <div class="fphoto fr">🧑‍💼</div>
+      <div class="finfo">
+        <div class="frole">Founder & CEO</div>
+        <div class="fname">Rayan Azeem</div>
+        <p class="fbio">Rayan brings a decade of retail and supply chain experience to Luxleaf. His vision was simple — give every Indian woman access to beautiful, affordable fashion without compromise on quality.</p>
+        <div class="fquote">"Fashion should empower, not empty your wallet."</div>
+      </div>
+    </div>
+    <div class="fcard">
+      <div class="fphoto fp">👩‍💼</div>
+      <div class="finfo">
+        <div class="frole">Co-Founder & Creative Director</div>
+        <div class="fname">Pallavi Yadav</div>
+        <p class="fbio">Pallavi is the creative heart of Luxleaf. With a background in textile design and styling, she personally curates every collection — blending Indian tradition with a modern, fresh sensibility.</p>
+        <div class="fquote">"Every outfit tells a story. We help you tell yours."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY QUOTE -->
+<div class="sbar">
+  <blockquote>"We started Luxleaf from a small room in Jaipur with one goal — make Indian women look and feel stunning every single day, without breaking the bank."</blockquote>
+  <cite>— Rayan Azeem &amp; Pallavi Yadav, Founders of Luxleaf</cite>
+</div>
+
+<!-- REVIEWS -->
+<div class="wrap rwrap">
+  <div class="srow" style="margin-bottom:28px"><div><span class="slbl2">Reviews</span><h2 class="stitle">What our <em>customers say</em></h2></div></div>
+  <div class="rgrid">
+    <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Absolutely love the kurta set! The fabric is so soft and the embroidery is gorgeous. Delivered in just 2 days. Will definitely order again from Luxleaf!"</p><div class="ruser"><div class="rav av1">P</div><div><div class="rname">Priya Sharma</div><div class="rcity">Mumbai</div></div></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"The maxi dress fits perfectly and the colours are exactly as shown. Finally a website that actually delivers what it promises. Luxleaf is the real deal!"</p><div class="ruser"><div class="rav av2">A</div><div><div class="rname">Ananya Gupta</div><div class="rcity">Delhi</div></div></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Super quality and super fast delivery! The Palazzo set is my new favourite outfit. Already recommended Luxleaf to all my friends!"</p><div class="ruser"><div class="rav av3">S</div><div><div class="rname">Sneha Patil</div><div class="rcity">Pune</div></div></div></div>
+  </div>
+</div>
+
+<!-- PERKS -->
+<div class="perks">
+  <div class="perk"><span class="pico">🚚</span><div><div class="ptitle">Free Delivery</div><div class="psub">On orders above ₹999</div></div></div>
+  <div class="perk"><span class="pico">↩</span><div><div class="ptitle">Easy Returns</div><div class="psub">7-day hassle-free returns</div></div></div>
+  <div class="perk"><span class="pico">🔒</span><div><div class="ptitle">Secure Payment</div><div class="psub">100% safe & encrypted</div></div></div>
+  <div class="perk"><span class="pico">🎧</span><div><div class="ptitle">24/7 Support</div><div class="psub">Always here for you</div></div></div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="nlsec">
+  <span class="slbl2">Newsletter</span>
+  <h2 class="stitle" style="margin-bottom:6px">Get <em>Exclusive Deals</em></h2>
+  <p class="nldesc">Subscribe and get 10% off your first order. No spam — promise.</p>
+  <div class="nlform">
+    <input type="email" placeholder="Your email address" id="nlEmail">
+    <button onclick="subNl()">Subscribe</button>
+  </div>
+  <div class="nlperks">
+    <span class="nlp">First to know new arrivals</span>
+    <span class="nlp">Exclusive discounts</span>
+    <span class="nlp">Style tips</span>
+    <span class="nlp">No spam</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftgrid">
+    <div>
+      <span class="ftlogo">Lux<em>leaf</em></span>
+      <p class="ftabout">Your trusted destination for premium women's fashion. Every piece is handpicked by our founders, delivered with care across India.</p>
+      <div class="ftfounders">Founded by <b>Rayan Azeem</b> &amp; <b>Pallavi Yadav</b><br>Started in Jaipur &nbsp;·&nbsp; Est. 2021</div>
+      <div class="ftsocials">
+        <button class="ftsoc">📸</button><button class="ftsoc">📘</button><button class="ftsoc">🐦</button><button class="ftsoc">📌</button>
+      </div>
+    </div>
+    <div class="ftcol">
+      <div class="ftcoltitle">Shop</div>
+      <ul><li><a href="#">New Arrivals</a></li><li><a href="#">Best Sellers</a></li><li><a href="#">Kurtas & Sets</a></li><li><a href="#">Western Wear</a></li><li><a href="#">Sale</a></li></ul>
+    </div>
+    <div class="ftcol">
+      <div class="ftcoltitle">Help</div>
+      <ul><li><a href="#">Size Guide</a></li><li><a href="#">Track Your Order</a></li><li><a href="#">Returns & Exchange</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact Us</a></li></ul>
+    </div>
+    <div class="ftcol">
+      <div class="ftcoltitle">Company</div>
+      <ul><li><a href="#">Our Story</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Press</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li></ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span>© 2025 Luxleaf. Founded by Rayan Azeem & Pallavi Yadav. Made with care in India.</span>
+    <div class="payrow"><span class="paypill">UPI</span><span class="paypill">Visa</span><span class="paypill">Master</span><span class="paypill">COD</span><span class="paypill">EMI</span></div>
+    <span>Privacy · Terms</span>
+  </div>
+</footer>
+
+<script>
+let cart=[];
+function addToCart(n,p,e,c){
+  const x=cart.find(i=>i.n===n);
+  if(x)x.q++;
+  else cart.push({n,p,e,c,q:1});
+  renderCart();
+  showToast('Added: '+n);
+}
+function removeItem(n){cart=cart.filter(i=>i.n!==n);renderCart()}
+function chQty(n,d){
+  const i=cart.find(x=>x.n===n);
+  if(!i)return;
+  i.q+=d;
+  if(i.q<1)cart=cart.filter(x=>x.n!==n);
+  renderCart();
+}
+function renderCart(){
+  document.getElementById('cbadge').textContent=cart.reduce((a,i)=>a+i.q,0);
+  const el=document.getElementById('ditems'),ft=document.getElementById('dfoot');
+  if(!cart.length){
+    el.innerHTML='<div class="dempty"><div>🛍️</div><p>Your cart is empty.<br>Add something beautiful!</p></div>';
+    ft.style.display='none';return;
+  }
+  ft.style.display='block';
+  el.innerHTML=cart.map(i=>`
+    <div class="ditem">
+      <div class="di-img ${i.c}">${i.e}</div>
+      <div>
+        <div class="di-n">${i.n}</div>
+        <div class="di-p">${i.p}</div>
+        <div class="di-q">
+          <button class="qb" onclick="chQty('${i.n}',-1)">−</button>
+          <span class="qn">${i.q}</span>
+          <button class="qb" onclick="chQty('${i.n}',1)">+</button>
+        </div>
+      </div>
+      <button class="drm" onclick="removeItem('${i.n}')">✕</button>
+    </div>`).join('');
+  const tot=cart.reduce((s,i)=>s+parseFloat(i.p.replace(/[₹,]/g,''))*i.q,0);
+  document.getElementById('dtval').textContent='₹'+tot.toLocaleString('en-IN');
+}
+function toggleCart(){
+  document.getElementById('drawer').classList.toggle('show');
+  document.getElementById('overlay').classList.toggle('show');
+}
+function doCheckout(){showToast('Order placed! Thank you for shopping at Luxleaf!');toggleCart()}
+function showToast(m){
+  const t=document.getElementById('toast');
+  document.getElementById('tmsg').textContent=m;
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t=setTimeout(()=>t.classList.remove('show'),3000);
+}
+function subNl(){
+  const v=document.getElementById('nlEmail').value;
+  if(!v||!v.includes('@')){showToast('Please enter a valid email.');return}
+  document.getElementById('nlEmail').value='';
+  showToast('Welcome! Your 10% off code is on its way.');
+}
+document.querySelectorAll('.catc').forEach(c=>{
+  c.addEventListener('click',()=>{
+    document.querySelectorAll('.catc').forEach(x=>x.classList.remove('on'));
+    c.classList.add('on');
+  });
+});
+document.querySelectorAll('.pwish').forEach(b=>{
+  b.addEventListener('click',e=>{
+    e.stopPropagation();
+    b.classList.toggle('liked');
+    b.textContent=b.classList.contains('liked')?'❤️':'♡';
+    if(b.classList.contains('liked'))showToast('Added to wishlist!');
+  });
+});
+let s=8*3600+34*60;
+setInterval(()=>{
+  s=Math.max(0,s-1);
+  const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=s%60;
+  document.getElementById('cdH').textContent=String(h).padStart(2,'0');
+  document.getElementById('cdM').textContent=String(m).padStart(2,'0');
+  document.getElementById('cdS').textContent=String(sc).padStart(2,'0');
+},1000);
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}
+  });
+},{threshold:.1});
+document.querySelectorAll('.pcard,.catc,.rcard,.fcard').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';
+  el.style.transition='opacity .55s ease,transform .55s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
